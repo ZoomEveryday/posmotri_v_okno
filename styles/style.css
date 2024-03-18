@@ -17,6 +17,7 @@ html {
   font-size: 18px;
   background-color: #1b1919;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -42,10 +43,11 @@ ol {
 .content {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: center;
   max-width: 1140px;
-  max-height: 534px;
   gap: 30px;
+  padding: 0px;
 }
 
 .search-form {
@@ -57,7 +59,7 @@ ol {
 
 .content__list {
   height: 298px;
-  overflow: scroll;
+  overflow: auto;
   position: relative;
 }
 
@@ -112,7 +114,8 @@ ol {
 
 .content__video-card-thumbnail {
   width: 194px;
-  height: 103px;
+  min-height: 103px;
+  object-position: center;
   object-fit: cover;
 }
 
@@ -140,6 +143,10 @@ ol {
   font-weight: 700;
   line-height: 30px;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200px;
 }
 
 .content__video-card-description {
@@ -193,7 +200,7 @@ input[type="text"] {
 
 button {
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid currentColor;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -263,7 +270,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
   border: none;
 }
 
-.search-form__label:hover {
+.search-form__label-text:hover {
   text-decoration: underline;
 }
 
@@ -308,4 +315,8 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
 .content__list:focus-visible {
   outline: 1px solid white;
   outline-offset: 1px;
+}
+
+.content__card-link:active {
+  background-color: #545050;
 }
